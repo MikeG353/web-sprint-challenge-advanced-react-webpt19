@@ -29,14 +29,31 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain how to build stateful class components.
+    Class components can maintain state by using the constructor to declare state, though this isn't nessisary in the latest versions. State is maintained with useState and setState.
 
 2. Describe the different phases of the component lifecycle.
+    The Mounting phase is when the component is first mounted to the DOM.
+    The Updating phase occurs when state or props are changed, or can be triggered with a forceUpdate().
+    The Unmounting phase is when a component is removed from the DOM.
+
+    They give us more control over the component, and allow us to make changes in response to a component being rendered or updated.
 
 3. Demonstrate an understanding of class component lifecycle methods.
+    ComponentDidMount is the lifecycle method for the Mounting phase and is used after initial state and props are defined and that component is rendered.
+    ComponentDidUpdate is the lifecycle method for the Updating phase and fires when the state or props for the component are changed.
+    ComponentWillUnmount is the lifecycle method for the Unmounting phase and is not something widely used, but I would use it on window close or app close to prompt the user to save their work.
 
 4. Define stateful logic.
+    Logic that is contained within a component. It commonly deals with state, but doesnt always HAVE to.
 
 5. Describe how to test a React component with React Testing Library.
+    1. create a test.js file for the component you wish to test.
+    2. import react testing library
+    3. use "test()" or nested tests (describe("name of component". ()=> {it("name of test", () => {
+      4. Arrange the data for your test. Define what your test needs to interact with.
+      5. Act on the data you arrange. Run a method or alter some state.
+      6. Assert your expected outcome from the change in the test. The assertion should resolve as a boolean and will either pass or fail.
+    })}))
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
